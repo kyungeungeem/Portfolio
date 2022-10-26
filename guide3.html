@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<title>VIDEO</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Favicon -->
+	    <link href="img/hero/favicon.png" rel="shortcut icon"/>
+		<style>
+			*{margin:0; padding:0;}
+			a{text-decoration:none;
+				color:#000;}
+			
+			.fixed_box{position:fixed;
+				bottom:30px;
+				right:50px;
+				width:40px;}
+			#top
+			{
+				text-align: center;
+                background: cover;
+                max-width: 1320px;
+				margin: 0 auto; 
+				margin-top: 50px;
+			}
+            video
+            {
+                max-width: 100%;
+            }
+			body
+			{
+				background-color: #000;
+			}
+			p
+			{
+				color: #fff;
+				margin-top: 50px;
+				font-family: 'Daniel Black', sans-serif;
+				letter-spacing: 2px;
+				font-size: 40px;
+			}
+			.margin
+			{
+				text-align: center;
+				margin: 0 auto;
+			}
+			
+			@font-face {
+    		font-family: 'Daniel';
+    		font-style: normal;
+    		font-weight: 400;
+    		src: local('Daniel'), url('https://fonts.cdnfonts.com/s/101/daniel.woff') format('woff');
+			}
+			@font-face {
+    		font-family: 'Daniel';
+    		font-style: normal;
+    		font-weight: 700;
+    		src: local('Daniel'), url('https://fonts.cdnfonts.com/s/101/danielbd.woff') format('woff');
+			}
+
+			@media (max-width:335px){
+			p{
+				font-size: 30px;
+			}
+	}
+			
+		</style>
+	</head>
+	<body>
+		<div class="margin">
+			<p>Play "RARTE"</p>
+		</div>
+		<div id="top">
+			<video src="videos/rarte_home.mp4" controls loop autoplay playsinline muted></video>
+		</div>
+
+
+		<!--이동시 부드럽게 이동시키기 위해 추가한 구문 시작. script쪽 전부 삭제가능.-->
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script>
+			$(function() {
+				$('a[href*="#"]:not([href="#"])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+				$('html, body').animate({
+				scrollTop: target.offset().top
+				}, 500);//움직이는 시간 조정
+				return false;
+				}
+				}
+				});
+				});
+		</script>
+		<!--이동시 부드럽게 이동시키기 위해 추가한 구문 끝. 삭제가능.-->
+	</body>
+</html>
